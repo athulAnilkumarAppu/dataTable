@@ -1,0 +1,42 @@
+
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    cursor: pointer;
+    background: #f4f4f4;
+    padding: 10px;
+  }
+
+  td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  tr:hover {
+    background: #f9f9f9;
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: 20px;
+}
+
+
+.pagination {
+  margin-top: 16px;
+
+  button {
+    margin-right: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+
+  .active {
+    background: #007bff;
+    color: white;
+  }
+}

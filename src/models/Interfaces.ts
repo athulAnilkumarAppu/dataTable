@@ -18,3 +18,27 @@ export interface FilterOptions {
   categories: string[];
   statuses: string[];
 }
+
+export interface DataTablePropsType {
+  data: DataRecord[];
+  onSort: (key: keyof DataRecord) => void;
+}
+
+export interface PaginationPropsType {
+  currentPage: number;
+  totalItems: number;
+  rowsPerPage: number;
+  onPageChange: (page: number) => void;
+}
+
+export interface SearchbarPropType {
+  value: string;
+  onSearchChange: (value: string) => void;
+}
+
+export interface FilterPropType {
+  selectedCategories: string[];
+  selectedStatuses: string[];
+  onCategoryChange: (categories: string[]) => void;
+  onStatusChange: (statuses: string[]) => void;
+}
