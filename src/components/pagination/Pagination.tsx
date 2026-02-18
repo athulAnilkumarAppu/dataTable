@@ -32,7 +32,6 @@ const Pagination = ({
 
   return (
     <div className="pagination">
-      
       <button
         className="arrow"
         disabled={currentPage === 1}
@@ -41,7 +40,6 @@ const Pagination = ({
         ←
       </button>
 
-      
       {visiblePages[0] > 1 && (
         <>
           <button onClick={() => onPageChange(1)}>1</button>
@@ -49,7 +47,6 @@ const Pagination = ({
         </>
       )}
 
-      
       {visiblePages.map((page) => (
         <button
           key={page}
@@ -60,19 +57,15 @@ const Pagination = ({
         </button>
       ))}
 
-    
       {visiblePages[visiblePages.length - 1] < totalPages && (
         <>
           {visiblePages[visiblePages.length - 1] < totalPages - 1 && (
             <span className="dots">...</span>
           )}
-          <button onClick={() => onPageChange(totalPages)}>
-            {totalPages}
-          </button>
+          <button onClick={() => onPageChange(totalPages)}>{totalPages}</button>
         </>
       )}
 
-     
       <button
         className="arrow"
         disabled={currentPage === totalPages}
@@ -85,4 +78,3 @@ const Pagination = ({
 };
 
 export default Pagination;
-

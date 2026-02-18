@@ -1,7 +1,7 @@
 import { FilterPropType } from "../../models/Interfaces";
 
-const categories = ['Electronics', 'Clothing', 'Books', 'Furniture'];
-const statuses = ['Active', 'Inactive', 'Pending'];
+const categories = ["Electronics", "Clothing", "Books", "Furniture"];
+const statuses = ["Active", "Inactive", "Pending"];
 
 const Filters = ({
   selectedCategories,
@@ -12,7 +12,7 @@ const Filters = ({
   const toggleSelection = (
     value: string,
     selected: string[],
-    callback: (val: string[]) => void
+    callback: (val: string[]) => void,
   ) => {
     if (selected.includes(value)) {
       callback(selected.filter((item) => item !== value));

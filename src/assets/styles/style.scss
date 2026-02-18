@@ -6,7 +6,7 @@ body,
 }
 
 body {
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 .app {
@@ -20,9 +20,6 @@ body {
 .app h1 {
   margin: 0 0 12px 0;
 }
-
-
-
 
 .data-table-wrapper {
   width: 100%;
@@ -82,12 +79,10 @@ body {
   width: 20%;
 }
 
-
 .empty {
   text-align: center;
   padding: 20px;
 }
-
 
 .pagination {
   margin-top: 16px;
@@ -103,7 +98,6 @@ body {
     color: white;
   }
 }
-
 
 .filters {
   display: flex;
@@ -146,14 +140,12 @@ body {
   }
 }
 
-
 @media (max-width: 768px) {
   .filters {
     flex-direction: column;
     gap: 16px;
   }
 }
-
 
 .search-bar {
   margin-bottom: 16px;
@@ -190,12 +182,7 @@ body {
   height: 14px;
   width: 100%;
   border-radius: 4px;
-  background: linear-gradient(
-    90deg,
-    #f3f4f6 25%,
-    #e5e7eb 50%,
-    #f3f4f6 75%
-  );
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
   background-size: 200% 100%;
   animation: shimmer 1.2s infinite linear;
 }
@@ -209,7 +196,6 @@ body {
   }
 }
 
-
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -219,3 +205,8 @@ body {
   }
 }
 
+.no-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

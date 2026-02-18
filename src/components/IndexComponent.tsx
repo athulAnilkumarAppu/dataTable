@@ -8,17 +8,15 @@ import SearchBar from "./searchBar/SearchBar";
 import Filters from "./filter/Filter";
 import Loader from "./loaders/Loader";
 
-
-const IndexComponent = ()=> {
- const [loading, setLoading] = useState(true);
+const IndexComponent = () => {
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState<DataRecord[]>([]);
 
-  // simulate API delay
   useEffect(() => {
     setTimeout(() => {
       setData(mockData);
       setLoading(false);
-    }, 800);
+    }, 1000);
   }, []);
 
   const {
@@ -38,22 +36,19 @@ const IndexComponent = ()=> {
   } = useTable(data);
 
   const handleSort = (key: keyof DataRecord) => {
-    let direction: 'asc' | 'desc' = 'asc';
+    let direction: "asc" | "desc" = "asc";
 
-    if (sortConfig?.key === key && sortConfig.direction === 'asc') {
-      direction = 'desc';
+    if (sortConfig?.key === key && sortConfig.direction === "asc") {
+      direction = "desc";
     }
 
     setSortConfig({ key, direction });
   };
 
-//   if (loading) return <Loader />;
-
   return (
-    <div >
+    <div>
       <h1>Data Table</h1>
 
-    
       <SearchBar
         value={search}
         onSearchChange={(value) => {
@@ -62,7 +57,6 @@ const IndexComponent = ()=> {
         }}
       />
 
-     
       <Filters
         selectedCategories={categories}
         selectedStatuses={statuses}
@@ -76,20 +70,26 @@ const IndexComponent = ()=> {
         }}
       />
 
-     {loading ? <Loader /> : paginatedData?.length > 0 ? <DataTable data={paginatedData} onSort={handleSort} /> : <h4>No Data</h4>}
-      
+      {loading ? (
+        <Loader />
+      ) : paginatedData?.length > 0 ? (
+        <DataTable data={paginatedData} onSort={handleSort} />
+      ) : (
+        <div className="no-data">
+          <h4>No Data</h4>
+        </div>
+      )}
 
-      
-      <Pagination
-        currentPage={currentPage}
-        totalItems={totalItems}
-        rowsPerPage={rowsPerPage}
-        onPageChange={setCurrentPage}
-      />
+      {paginatedData?.length > 0 ? (
+        <Pagination
+          currentPage={currentPage}
+          totalItems={totalItems}
+          rowsPerPage={rowsPerPage}
+          onPageChange={setCurrentPage}
+        />
+      ) : null}
     </div>
   );
+};
 
-   
-}
-
-export default IndexComponent
+export default IndexComponent;

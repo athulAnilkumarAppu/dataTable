@@ -1,9 +1,8 @@
-import IndexComponent from './components/IndexComponent';
-
+import IndexComponent from "./components/IndexComponent";
 
 function App() {
   return (
-    <div className='app'>
+    <div className="app">
       <IndexComponent />
     </div>
   );
