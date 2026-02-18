@@ -6,6 +6,7 @@ import Pagination from "./pagination/Pagination";
 import DataTable from "./dataTable/DataTable";
 import SearchBar from "./searchBar/SearchBar";
 import Filters from "./filter/Filter";
+import Loader from "./loaders/Loader";
 
 
 const IndexComponent = ()=> {
