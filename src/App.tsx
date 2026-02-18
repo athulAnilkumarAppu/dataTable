@@ -3,7 +3,7 @@ import IndexComponent from './components/IndexComponent';
 
 function App() {
   return (
-    <div>
+    <div className='app'>
       <IndexComponent />
     </div>
   );

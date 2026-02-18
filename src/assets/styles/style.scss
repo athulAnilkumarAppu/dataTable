@@ -1,24 +1,87 @@
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
 
+body {
+  overflow-x: hidden; 
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.app h1 {
+  margin: 0 0 12px 0;
+}
+
+
+
+
+.data-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
 
 .data-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed; // 🔥 important for alignment
+
+  th,
+  td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   th {
+    background: #f9fafb;
+    font-weight: 600;
     cursor: pointer;
-    background: #f4f4f4;
-    padding: 10px;
   }
 
-  td {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-  }
-
-  tr:hover {
-    background: #f9f9f9;
+  tbody tr:hover {
+    background: #f3f4f6;
   }
 }
+
+.data-table th:nth-child(1),
+.data-table td:nth-child(1) {
+  width: 8%;
+}
+
+.data-table th:nth-child(2),
+.data-table td:nth-child(2) {
+  width: 25%;
+}
+
+.data-table th:nth-child(3),
+.data-table td:nth-child(3) {
+  width: 20%;
+}
+
+.data-table th:nth-child(4),
+.data-table td:nth-child(4) {
+  width: 15%;
+}
+
+.data-table th:nth-child(5),
+.data-table td:nth-child(5) {
+  width: 20%;
+}
+
 
 .empty {
   text-align: center;
