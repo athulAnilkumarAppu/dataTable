@@ -47,11 +47,11 @@ const IndexComponent = ()=> {
     setSortConfig({ key, direction });
   };
 
-  if (loading) return <Loader />;
+//   if (loading) return <Loader />;
 
   return (
     <div >
-      <h1>Searchable Paginated Data Table</h1>
+      <h1>Data Table</h1>
 
     
       <SearchBar
@@ -76,8 +76,8 @@ const IndexComponent = ()=> {
         }}
       />
 
-     
-      <DataTable data={paginatedData} onSort={handleSort} />
+     {loading ? <Loader /> : paginatedData?.length > 0 ? <DataTable data={paginatedData} onSort={handleSort} /> : <h4>No Data</h4>}
+      
 
       
       <Pagination
